@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Taking care of my cats</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topnav">
+  	<a class="active" href="index.html">Home</a>
+  	<a href="page2.html">Biology of cats</a>
+	<div class="dropdown">
+		<button class="dropbtn">Extra tips on how to take care of your cats
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<a href="page3.html">Health at home</a>
+			<a href="page4.html">Medication</a>
+		</div>
+	</div>
+  	<a href="page5.html">Image gallery</a>
+</div>
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+  		<div class="numbertext">1 / 3</div>
+  		<img src="images/portrait1.jpg" style="width:100%">
+  		<div class="text">Rum and Raisin in their favourite napping place!</div>
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">2 / 3</div>
+  		<img src="images/portrait2.jpg" style="width:100%">
+  		<div class="text">Rum and Raisin napping (in the same place)</div>
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">3 / 3</div>
+  		<img src="images/portrait3.jpg" style="width:100%">
+  		<div class="text">Their resemblance is uncanny!</div>
+	</div>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+  	<span class="dot"></span> 
+  	<span class="dot"></span> 
+  	<span class="dot"></span> 
+</div>
+
+<div style="height:400px;background-color:white;">
+<h1 style="font-size: 200%;">About myself</h1>
+<p style="margin-right:5%;margin-left:5%;">Hello! I'm Sirui, a current Year 2 NIE student. My teaching subjects are Biology and Chemistry.
+<img src="images/selfiewraisin.jpg" class="center" style="width:30%">
+I own 2 cats, Rum and Raisin. They were adopted from the Society for the Prevention of Cruelty to Animals (SPCA) center back in 2019. Since then, I love to spend my free time taking care of them and playing with them!</p>
+</div>
+
+<div style="margin-left:5%;margin-right:5%;padding:1px 10px;height:1000px;">
+<h1 style="font-size: 200%;">More about my cats</h1>
+<h3>Raisin</h3>
+<div class="center">
+	<img src="images/raisinportrait.jpg" class="center" style="width:40%">
+<button class="button" onclick="toggleText()">Click me for more information on Raisin</button>
+<p id='demo' style='display: none'>Being the older sibling of Rum, she upholds the responsibility of taking care of her younger brother. Compared to Rum, her fur is majority white with a few black spots in the center.</p>  
+
+<h3>Rum (Rummie)</h3>
+	<img src="images/rummieportrait.jpg" class="center" style=width:40%>
+<button class="button" onclick="toggleText1()">Click me for more information on Rummie</button>
+<p id='demo1' style='display: none'>As with all younger siblings, Rum (Or as I like to call him, Rummie), is more mischievous. His fur is a more distinguished mix of both black and white colours, compared to his older sister.</p>
+
+</div>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function toggleText() {
+  var text = document.getElementById("demo");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+
+function toggleText1() {
+  var text = document.getElementById("demo1");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>
